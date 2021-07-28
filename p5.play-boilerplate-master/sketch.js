@@ -7,8 +7,8 @@ var engine, world;
 var particles;
 var plinko;
 var divisions;
-var ground
-
+var ground;
+var divisionsHeight=300;
 
 
 
@@ -20,13 +20,24 @@ var ground
   world = engine.world;
   Engine.run(engine);
   ground = new Ground();
- /* for (let i = 0; i < plinko; i++) {
-    plinko = new plinko(50, 600, 50, 50);
+  var particles = []
+  var plinko = []
+  var divisions = []
+  for (var k = 0;k <=width; k = k + 80) {
+    divisions.push(new Divisions(k, height-divisionsHeight/2, 10, divisionsHeight));
+  } 
+  for (var j = 40; j <=width; j=j+50) {
+    plinkos.push(new Plinkos(j,75));
   }
-  for (let i = 0; i < divisions; i++) {
-  divisions = new divisions(10,50,10,100);
+  for (var j = 15; j <=width-10; j=j+50) {
+    plinkos.push(new Plinko(j,175));
   }
-  ground = new ground(5,5,480,10);*/
+  for (var j = 0; j <= particles.length; j++) {
+    particles[j].display();
+  }
+  for (var k = 0; k <=divisions.length; k++) {
+    divisions[k].display();
+  }
 }
 
 function draw() {
