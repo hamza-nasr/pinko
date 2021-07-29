@@ -9,8 +9,8 @@ var plinko;
 var divisions;
 var ground;
 var divisionsHeight=300;
-
-
+var score
+var turns
 
  
  function setup() {
@@ -23,6 +23,8 @@ var divisionsHeight=300;
   var particles = []
   var plinko = []
   var divisions = []
+  var score = []
+  var turns = 5;
   for (var k = 0;k <=width; k = k + 80) {
     divisions.push(new Divisions(k, height-divisionsHeight/2, 10, divisionsHeight));
   } 
@@ -42,5 +44,7 @@ var divisionsHeight=300;
 
 function draw() {
   background(255,255,255);  
+  score(440,750);
+  text("100 points", 40, 200, 10, 10 )
   drawSprites();
 }
